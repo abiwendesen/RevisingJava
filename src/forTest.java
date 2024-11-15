@@ -4,7 +4,7 @@ public class forTest {
        if(firstIndex == -1){
            return "";
        }
-
+       System.out.println("just checking");
 
         return "";
     }
