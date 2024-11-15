@@ -5,9 +5,13 @@ public class forTest {
            return "";
        }
 
+
         int taaIndex = findStopCodon(dna, firstIndex, "TAA");
         int tagIndex = findStopCodon(dna, firstIndex, "TAG");
         int tgaIndex = findStopCodon(dna, firstIndex, "TGA");
+
+       System.out.println("just checking");
+
 
         int temp = Math.min(taaIndex, tagIndex);
         int minIndex = Math.min(temp, tgaIndex);
