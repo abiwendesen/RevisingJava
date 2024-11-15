@@ -10,12 +10,25 @@ public class forTest {
         int tagIndex = findStopCodon(dna, firstIndex, "TAG");
         int tgaIndex = findStopCodon(dna, firstIndex, "TGA");
 
-       System.out.println("just checking");
 
 
-        int temp = Math.min(taaIndex, tagIndex);
-        int minIndex = Math.min(temp, tgaIndex);
-        if(minIndex == dna.length()){
+
+        //int temp = Math.min(taaIndex, tagIndex);
+        //int minIndex = Math.min(temp, tgaIndex);
+        int minIndex = 0;
+        if(taaIndex ==-1  || (tgaIndex !=-1 && tgaIndex<taaIndex)){
+            minIndex = tgaIndex;
+        }
+        else {
+            minIndex = taaIndex;
+        }
+
+        if(minIndex == -1 ||(tagIndex !=-1 && tagIndex<minIndex)){
+
+           minIndex = tagIndex;
+        }
+
+        if(minIndex == -1){
         return "";
 
         }
@@ -33,12 +46,12 @@ public class forTest {
                 currIndex = dna.indexOf(stopCodon,currIndex+1);
             }
         }
-   return dna.length();
+   return -1;
     }
 
     public static void main (String[] args){
 
-        String dna = "ATGACGCTAAGATAATGATAG";
+        String dna = "ATGACGCTAAGATAGTGATAG";
         System.out.println(findGeen(dna));
     }
 }
