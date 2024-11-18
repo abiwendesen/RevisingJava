@@ -24,8 +24,9 @@ public class IterativeGeen {
 
 
     public static void main(String[] args){
-            String s1 = "AATGCGTAATTAATCG";
+            String s1 = "AATGCGTAATTAATCGATG";
             System.out.println("The Geen is "+findGeen(s1));
+            System.out.println(s1.indexOf("ATG",5));
         }
     }
 

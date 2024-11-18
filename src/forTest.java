@@ -53,5 +53,6 @@ public class forTest {
 
         String dna = "ATGACGCTAAGATAGTGATAG";
         System.out.println(findGeen(dna));
+
     }
 }
