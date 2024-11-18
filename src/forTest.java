@@ -1,6 +1,6 @@
 public class forTest {
-    public static  String findGeen(String dna){
-        int firstIndex = dna.indexOf("ATG");
+    public static  String findGene(String dna, int where){
+        int firstIndex = dna.indexOf("ATG", where);
        if(firstIndex == -1){
            return "";
        }
@@ -35,6 +35,19 @@ public class forTest {
 
         return dna.substring(firstIndex,minIndex+3);
     }
+    public static void printAllGene(String dna){
+        int startIndex = 0;
+        while(true){
+
+            String currGeen = findGene(dna,startIndex);
+            if(currGeen.isEmpty()){
+                break;
+            }
+            System.out.println("The Gene found: "+ currGeen);
+            startIndex = dna.indexOf(currGeen,startIndex) + currGeen.length();
+        }
+
+    }
     public static int findStopCodon(String dna,int startIndex,String stopCodon){
         int currIndex = dna.indexOf(stopCodon,startIndex+3);
         while(currIndex != -1){
@@ -51,8 +64,9 @@ public class forTest {
 
     public static void main (String[] args){
 
-        String dna = "ATGACGCTAAGATAGTGATAG";
-        System.out.println(findGeen(dna));
+       // String dna = "ATGACGCTAAGATAGTGATAG";
+         String dna = "ATGATCTAATTTATGCTGCAACGGTGAAGA";
+         printAllGene(dna);
 
     }
 }
