@@ -10,9 +10,6 @@ public class forTest {
         int tagIndex = findStopCodon(dna, firstIndex, "TAG");
         int tgaIndex = findStopCodon(dna, firstIndex, "TGA");
 
-
-
-
         //int temp = Math.min(taaIndex, tagIndex);
         //int minIndex = Math.min(temp, tgaIndex);
         int minIndex = 0;
@@ -45,6 +42,7 @@ public class forTest {
             }
             System.out.println("The Gene found: "+ currGeen);
             startIndex = dna.indexOf(currGeen,startIndex) + currGeen.length();
+
         }
 
     }
