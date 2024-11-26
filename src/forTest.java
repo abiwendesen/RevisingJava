@@ -71,6 +71,8 @@ public class forTest {
         }
     }
 
+
+
     public static void main (String[] args){
 
        // String dna = "ATGACGCTAAGATAGTGATAG";
