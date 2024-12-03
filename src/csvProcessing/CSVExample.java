@@ -14,6 +14,7 @@ public class CSVExample {
                 System.out.print(record.get("Name") + "\t");
                 System.out.print("\t");
                 System.out.print(record.get("Favorite Color") + "\t");
+                System.out.print("\t");
                 System.out.println(record.get("Favorite Food"));
             }
         }
