@@ -7,6 +7,7 @@ public class CSVExample {
         FileResource fr = new FileResource();
         CSVParser csv = fr.getCSVParser();
         for(CSVRecord record:csv){
+            System.out.print("Name" +"\t");
             System.out.print(record.get("Name")+"\t");
             System.out.print(record.get("Favorite Color")+"\t");
             System.out.println(record.get("Favorite Food"));
