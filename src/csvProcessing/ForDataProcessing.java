@@ -9,10 +9,17 @@ public class ForDataProcessing {
         Scanner input = new Scanner(System.in);
         FileResource file = new FileResource();
         CSVParser parser = file.getCSVParser();
+        int dateFromCSV;
         System.out.println("Please enter the date ");
         int date = input.nextInt();
-
-
-
+        for(CSVRecord record : parser){
+          dateFromCSV = Integer.parseInt(record.get("Year"));
+          if(dateFromCSV > date){
+              System.out.println(record.get("Computer Science"));
+          }
+        }
+    }
+    public static void main(String[] arg){
+        processData();
     }
 }
