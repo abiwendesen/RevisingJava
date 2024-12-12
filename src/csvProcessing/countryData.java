@@ -9,22 +9,20 @@ import java.util.Scanner;
 
 public class countryData {
     public  static void CountryInfo(CSVParser parser, String country ){
-        try {
+            boolean breaker = false;
             for (CSVRecord record : parser) {
                 if (record.get("Country").contains(country)) {
                     System.out.print(record.get("Country") + " : ");
                     System.out.print(record.get("Exports") + ": ");
                     System.out.println(record.get("Value (dollars)"));
+                    breaker = true;
                 }
 
-                else{
-                    System.out.println("Not Found");
-                  break;
-                }
             }
-        } catch (Exception error){
-            System.out.println(error);
-        }
+            if(!breaker){
+                System.out.println("NOT FOUND");
+            }
+
     }
 
     public static void testCountryInfo(){
@@ -32,7 +30,7 @@ public class countryData {
         FileResource file = new FileResource();
         CSVParser parser = file.getCSVParser();
         System.out.println("Please enter the country you want to search");
-        String country = input.nextLine();
+        String country = input.next();
         CountryInfo(parser,country);
     }
 
